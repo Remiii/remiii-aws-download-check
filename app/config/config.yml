@@ -74,7 +74,7 @@ swiftmailer:
 # Add for remiii-website-kiter
 jms_i18n_routing:
     default_locale: en
-    locales: [en, fr, de]
+    locales: [en, fr]
     strategy: prefix
 
 mopa_bootstrap:
