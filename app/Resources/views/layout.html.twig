@@ -12,20 +12,14 @@
         <title>{% block title %}AWS Download check{% endblock title %}</title>
 
         {% block stylesheet %}
-
-            {# CSS - Bootstrap #}
-            <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-            {# CSS - FlatUI #}
-            <link href="/vendor/flat-ui/dist/css/flat-ui.css" rel="stylesheet">
-            {# CSS - Parsley CSS Bootstrap #}
-            <link href="/vendor/parsleyjs/src/parsley.css" rel="stylesheet">
-
-            {% stylesheets filter='cssrewrite'
-                '../app/Resources/public/css/style.css'
+            {% stylesheets
+                '%kernel.root_dir%/../web/vendor/bootstrap/dist/css/bootstrap.min.css'
+                '%kernel.root_dir%/../web/vendor/flat-ui/dist/css/flat-ui.css'
+                '%kernel.root_dir%/../web/vendor/parsleyjs/src/parsley.css'
+                '../app/Resources/public/css/style.css' filter='cssrewrite'
             %}
-                <link rel="stylesheet" href="{{ asset_url }}" />
+                <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
             {% endstylesheets %}
-
         {% endblock stylesheet %}
 
         <!--[if lt IE 9]>
@@ -73,19 +67,14 @@
         </footer>
 
         {% block javascript %}
-
-            {# Script - Jquery #}
-            <script src="/vendor/jquery/dist/jquery.min.js"></script>
-
-            {# Script - Twitter Bootstrap #}
-            <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
-            {# Script - FlatUI #}
-            <script src="/vendor/flat-ui/dist/js/flat-ui.min.js"></script>
-
-            {# Script - Parsley #}
-            <script src="/vendor/parsleyjs/dist/parsley.min.js"></script>
-
+            {% javascripts
+                '%kernel.root_dir%/../web/vendor/jquery/dist/jquery.min.js'
+                '%kernel.root_dir%/../web/vendor/bootstrap/dist/js/bootstrap.min.js'
+                '%kernel.root_dir%/../web/vendor/flat-ui/dist/js/flat-ui.min.js'
+                '%kernel.root_dir%/../web/vendor/parsleyjs/dist/parsley.min.js'
+            %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
         {% endblock javascript %}
 
     </body>
