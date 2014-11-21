@@ -19,6 +19,8 @@ class DefaultController extends Controller
      */
     public function videoAction(Request $request, $videoNumber)
     {
+        $videos = $this->container->getParameter('video');
+
         $em = $this->getDoctrine()->getManager();
         $tempTesterId = $request->query->get('tempTesterId');
         $tempTester = $em->getRepository('remiiiAWSDownloadCheckBundle:Tester')->findOneByTempId($tempTesterId);
@@ -44,7 +46,11 @@ class DefaultController extends Controller
             $em->persist($videoTest);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('remiii_aws_download_check_video', array('videoNumber' => $videoNumber+1, 'tempTesterId' => $tempTester->getTempId())));
+            if (count($videos) >= $videoNumber+1) {
+                return $this->redirect($this->generateUrl('remiii_aws_download_check_video', array('videoNumber' => $videoNumber+1, 'tempTesterId' => $tempTester->getTempId())));
+            } else {
+                return $this->redirect($this->generateUrl('remiii_aws_download_check_final', array('tempTesterId' => $tempTester->getTempId())));
+            }
         }
 
         return array('videoNumber' => $videoNumber, 'form' => $form->createView());
