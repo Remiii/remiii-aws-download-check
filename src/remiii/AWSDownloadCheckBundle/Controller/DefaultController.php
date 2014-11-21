@@ -58,7 +58,7 @@ class DefaultController extends Controller
             }
         }
 
-        return array('videoNumber' => $videoNumber, 'form' => $form->createView());
+        return array('videoNumber' => $videoNumber, 'form' => $form->createView(), 'videoTitle' => key($currentVideo), 'videoUrl' => $currentVideo[key($currentVideo)]);
     }
 
     /**
