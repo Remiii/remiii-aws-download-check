@@ -19,3 +19,4 @@ web/vendor/
 !.gitkeep
 .idea
 *~
+web/uploads/documents/*
