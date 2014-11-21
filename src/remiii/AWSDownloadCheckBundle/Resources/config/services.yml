@@ -1,4 +1,7 @@
 services:
-#    remiii_aws_download_check.example:
-#        class: remiii\AWSDownloadCheckBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    gedmo.listener.timestampable:
+        class: Gedmo\Timestampable\TimestampableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ @annotation_reader ] ]
