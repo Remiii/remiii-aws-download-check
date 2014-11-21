@@ -1,6 +1,6 @@
 # README-setup
 
-## Requirments
+## Requirements
 
 * LAMP
 * Git
