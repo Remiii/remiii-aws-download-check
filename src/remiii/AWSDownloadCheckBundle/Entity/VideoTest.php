@@ -31,6 +31,21 @@ class VideoTest
 
     /**
      * @var string
+     * @ORM\Column(name="title_video", type="string", length=255)
+     * @Assert\Length(max = 255)
+     */
+    private $titleVideo;
+
+    /**
+     * @var string
+     * @ORM\Column(name="url_video", type="string", length=255)
+     * @Assert\Length(max = 255)
+     * @Assert\Url()
+     */
+    private $urlVideo;
+
+    /**
+     * @var string
      * @ORM\Column(name="download_time", type="string", length=255)
      * @Assert\Length(max = 255)
      */
@@ -95,6 +110,52 @@ class VideoTest
     public function getIdVideo()
     {
         return $this->idVideo;
+    }
+
+    /**
+     * Set titleVideo
+     *
+     * @param string $titleVideo
+     * @return VideoTest
+     */
+    public function setTitleVideo($titleVideo)
+    {
+        $this->titleVideo = $titleVideo;
+
+        return $this;
+    }
+
+    /**
+     * Get titleVideo
+     *
+     * @return string 
+     */
+    public function getTitleVideo()
+    {
+        return $this->titleVideo;
+    }
+
+    /**
+     * Set urlVideo
+     *
+     * @param string $urlVideo
+     * @return VideoTest
+     */
+    public function setUrlVideo($urlVideo)
+    {
+        $this->urlVideo = $urlVideo;
+
+        return $this;
+    }
+
+    /**
+     * Get urlVideo
+     *
+     * @return string 
+     */
+    public function getUrlVideo()
+    {
+        return $this->urlVideo;
     }
 
     /**
