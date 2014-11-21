@@ -32,7 +32,6 @@ class TesterType extends AbstractType
                 'data_class' => null,
                 'required' => false
             ))
-            ->add('tempId', 'hidden', array())
             ->add('save', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
     }
 

@@ -13,7 +13,6 @@ class VideoTestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idVideo', 'hidden', array())
             ->add('downloadTime', null, array())
             ->add('readingQuality', null, array())
             ->add('next', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
