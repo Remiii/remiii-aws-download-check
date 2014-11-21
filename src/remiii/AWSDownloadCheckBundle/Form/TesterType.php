@@ -25,15 +25,15 @@ class TesterType extends AbstractType
             ->add('isp', null, array(
                 'required' => true
             ))
-            ->add('connexionType', null, array(
-                'choices' => array(0 => 'Private', 1 => 'Open'),
+            ->add('connexionType', 'choice', array(
+                'choices' => array('adsl' => 'ADSL', 'sdsl' => 'SDSL', 'vdsl' => 'VDSL', 'fibre' => 'Fibre', '3g' => '3G', '4g' => '4G'),
                 'required' => true
             ))
-            ->add('routerLink', null, array(
-                'choices' => array(0 => 'Private', 1 => 'Open'),
+            ->add('routerLink', 'choice', array(
+                'choices' => array('wifi' => 'Wifi', 'filaire' => 'Filaire', 'autre' => 'Autre'),
                 'required' => true
             ))
-            ->add('testerTempId', 'hidden', array())
+            ->add('tempId', 'hidden', array())
             ->add('save', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
     }
 
