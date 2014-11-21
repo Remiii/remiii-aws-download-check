@@ -13,17 +13,20 @@ class TesterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', null, array())
-            ->add('lastname', null, array())
-            ->add('email', null, array())
-            ->add('isp', null, array())
+            ->add('firstname')
+            ->add('lastname')
+            ->add('email')
+            ->add('isp', null, array(
+                'label'  => 'Internet Service Provider',
+            ))
             ->add('connexionType', 'choice', array(
                 'choices' => array('adsl' => 'ADSL', 'sdsl' => 'SDSL', 'vdsl' => 'VDSL', 'fibre' => 'Fibre', '3g' => '3G', '4g' => '4G'),
                 'expanded' => true,
             ))
             ->add('routerLink', 'choice', array(
                 'choices' => array('wifi' => 'Wifi', 'filaire' => 'Filaire', 'autre' => 'Autre'),
-                'expanded' => true,
+                'expanded' => true
+            ))
             ->add('screenshot', 'file', array(
                 'data_class' => null,
                 'required' => false
