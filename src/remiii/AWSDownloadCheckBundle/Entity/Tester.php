@@ -193,7 +193,7 @@ class Tester
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -216,7 +216,7 @@ class Tester
     /**
      * Get tempId
      *
-     * @return string 
+     * @return string
      */
     public function getTempId()
     {
@@ -239,7 +239,7 @@ class Tester
     /**
      * Get firstname
      *
-     * @return string 
+     * @return string
      */
     public function getFirstname()
     {
@@ -262,7 +262,7 @@ class Tester
     /**
      * Get lastname
      *
-     * @return string 
+     * @return string
      */
     public function getLastname()
     {
@@ -285,7 +285,7 @@ class Tester
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -308,7 +308,7 @@ class Tester
     /**
      * Get isp
      *
-     * @return string 
+     * @return string
      */
     public function getIsp()
     {
@@ -331,7 +331,7 @@ class Tester
     /**
      * Get connexionType
      *
-     * @return string 
+     * @return string
      */
     public function getConnexionType()
     {
@@ -354,7 +354,7 @@ class Tester
     /**
      * Get routerLink
      *
-     * @return string 
+     * @return string
      */
     public function getRouterLink()
     {
@@ -377,7 +377,7 @@ class Tester
     /**
      * Get ipAddress
      *
-     * @return string 
+     * @return string
      */
     public function getIpAddress()
     {
@@ -400,7 +400,7 @@ class Tester
     /**
      * Get userAgent
      *
-     * @return string 
+     * @return string
      */
     public function getUserAgent()
     {
@@ -423,7 +423,7 @@ class Tester
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -446,7 +446,7 @@ class Tester
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getModified()
     {
@@ -492,7 +492,7 @@ class Tester
     /**
      * Get videoTests
      *
-     * @return \remiii\AWSDownloadCheckBundle\Entity\VideoTest 
+     * @return \remiii\AWSDownloadCheckBundle\Entity\VideoTest
      */
     public function getVideoTests()
     {

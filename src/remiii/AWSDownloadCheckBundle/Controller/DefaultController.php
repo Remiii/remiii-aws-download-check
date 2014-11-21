@@ -103,7 +103,10 @@ class DefaultController extends Controller
     */
     public function adminAction()
     {
-        return array();
+
+        $em = $this->getDoctrine()->getManager();
+        $results = $em->getRepository('remiiiAWSDownloadCheckBundle:Tester')->findAll();
+        return array('results'=>$results);
     }
 
 }

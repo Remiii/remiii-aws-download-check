@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * VideoTest
  *
  * @ORM\Table(name="video_test")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="remiii\AWSDownloadCheckBundle\Repository\VideoTestRepository")
  */
 class VideoTest
 {
@@ -82,7 +82,7 @@ class VideoTest
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -105,7 +105,7 @@ class VideoTest
     /**
      * Get idVideo
      *
-     * @return integer 
+     * @return integer
      */
     public function getIdVideo()
     {
@@ -128,7 +128,7 @@ class VideoTest
     /**
      * Get titleVideo
      *
-     * @return string 
+     * @return string
      */
     public function getTitleVideo()
     {
@@ -151,7 +151,7 @@ class VideoTest
     /**
      * Get urlVideo
      *
-     * @return string 
+     * @return string
      */
     public function getUrlVideo()
     {
@@ -174,7 +174,7 @@ class VideoTest
     /**
      * Get downloadTime
      *
-     * @return string 
+     * @return string
      */
     public function getDownloadTime()
     {
@@ -197,7 +197,7 @@ class VideoTest
     /**
      * Get readingQuality
      *
-     * @return string 
+     * @return string
      */
     public function getReadingQuality()
     {
@@ -220,7 +220,7 @@ class VideoTest
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -243,7 +243,7 @@ class VideoTest
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getModified()
     {
@@ -266,7 +266,7 @@ class VideoTest
     /**
      * Get tester
      *
-     * @return \remiii\AWSDownloadCheckBundle\Entity\Tester 
+     * @return \remiii\AWSDownloadCheckBundle\Entity\Tester
      */
     public function getTester()
     {
