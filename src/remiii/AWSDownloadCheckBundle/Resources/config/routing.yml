@@ -2,7 +2,7 @@ remiii_aws_download_check_video:
     path:     /video/{videoNumber}
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:video }
     requirements:
-        videoNumber: "[1-1]"
+        videoNumber: "^\d+$"
 
 remiii_aws_download_check_final:
     path:     /final

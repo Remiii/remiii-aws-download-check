@@ -21,6 +21,9 @@ class DefaultController extends Controller
     public function videoAction(Request $request, $videoNumber)
     {
         $videos = $this->container->getParameter('video');
+        if (count($videos) < $videoNumber) {
+            throw $this->createNotFoundException('you are lost.');
+        }
         $currentVideo = array_slice($videos, $videoNumber-1, 1);
 
         $em = $this->getDoctrine()->getManager();
