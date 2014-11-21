@@ -28,3 +28,7 @@ parameters:
     admin_password: ThisPasswordIsNotSoSecretChangeIt
     aws_login: administration
     aws_password: ThisPasswordIsNotSoSecretChangeIt
+
+    # Video array
+    video:
+        video1: http://google.com
