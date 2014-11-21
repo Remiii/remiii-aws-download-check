@@ -24,6 +24,12 @@ class VideoTest
     private $id;
 
     /**
+     * @var integer
+     * @ORM\Column(name="id_video", type="integer")
+     */
+    private $idVideo;
+
+    /**
      * @var string
      * @ORM\Column(name="download_time", type="string", length=255)
      * @Assert\Length(max = 255)
