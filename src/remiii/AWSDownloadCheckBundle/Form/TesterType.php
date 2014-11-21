@@ -27,10 +27,12 @@ class TesterType extends AbstractType
             ))
             ->add('connexionType', 'choice', array(
                 'choices' => array('adsl' => 'ADSL', 'sdsl' => 'SDSL', 'vdsl' => 'VDSL', 'fibre' => 'Fibre', '3g' => '3G', '4g' => '4G'),
+                'expanded' => true,
                 'required' => true
             ))
             ->add('routerLink', 'choice', array(
                 'choices' => array('wifi' => 'Wifi', 'filaire' => 'Filaire', 'autre' => 'Autre'),
+                'expanded' => true,
                 'required' => true
             ))
             ->add('tempId', 'hidden', array())
