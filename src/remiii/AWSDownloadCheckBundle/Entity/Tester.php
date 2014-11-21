@@ -110,4 +110,290 @@ class Tester
      * @ORM\ManyToOne(targetEntity="VideoTest", inversedBy="tester")
      */
     private $videoTests;
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set tempId
+     *
+     * @param string $tempId
+     * @return Tester
+     */
+    public function setTempId($tempId)
+    {
+        $this->tempId = $tempId;
+
+        return $this;
+    }
+
+    /**
+     * Get tempId
+     *
+     * @return string 
+     */
+    public function getTempId()
+    {
+        return $this->tempId;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     * @return Tester
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string 
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     * @return Tester
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string 
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Tester
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set isp
+     *
+     * @param string $isp
+     * @return Tester
+     */
+    public function setIsp($isp)
+    {
+        $this->isp = $isp;
+
+        return $this;
+    }
+
+    /**
+     * Get isp
+     *
+     * @return string 
+     */
+    public function getIsp()
+    {
+        return $this->isp;
+    }
+
+    /**
+     * Set connexionType
+     *
+     * @param string $connexionType
+     * @return Tester
+     */
+    public function setConnexionType($connexionType)
+    {
+        $this->connexionType = $connexionType;
+
+        return $this;
+    }
+
+    /**
+     * Get connexionType
+     *
+     * @return string 
+     */
+    public function getConnexionType()
+    {
+        return $this->connexionType;
+    }
+
+    /**
+     * Set routerLink
+     *
+     * @param string $routerLink
+     * @return Tester
+     */
+    public function setRouterLink($routerLink)
+    {
+        $this->routerLink = $routerLink;
+
+        return $this;
+    }
+
+    /**
+     * Get routerLink
+     *
+     * @return string 
+     */
+    public function getRouterLink()
+    {
+        return $this->routerLink;
+    }
+
+    /**
+     * Set ipAddress
+     *
+     * @param string $ipAddress
+     * @return Tester
+     */
+    public function setIpAddress($ipAddress)
+    {
+        $this->ipAddress = $ipAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get ipAddress
+     *
+     * @return string 
+     */
+    public function getIpAddress()
+    {
+        return $this->ipAddress;
+    }
+
+    /**
+     * Set userAgent
+     *
+     * @param string $userAgent
+     * @return Tester
+     */
+    public function setUserAgent($userAgent)
+    {
+        $this->userAgent = $userAgent;
+
+        return $this;
+    }
+
+    /**
+     * Get userAgent
+     *
+     * @return string 
+     */
+    public function getUserAgent()
+    {
+        return $this->userAgent;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Tester
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set modified
+     *
+     * @param \DateTime $modified
+     * @return Tester
+     */
+    public function setModified($modified)
+    {
+        $this->modified = $modified;
+
+        return $this;
+    }
+
+    /**
+     * Get modified
+     *
+     * @return \DateTime 
+     */
+    public function getModified()
+    {
+        return $this->modified;
+    }
+
+    /**
+     * Set videoTests
+     *
+     * @param \remiii\AWSDownloadCheckBundle\Entity\VideoTest $videoTests
+     * @return Tester
+     */
+    public function setVideoTests(\remiii\AWSDownloadCheckBundle\Entity\VideoTest $videoTests = null)
+    {
+        $this->videoTests = $videoTests;
+
+        return $this;
+    }
+
+    /**
+     * Get videoTests
+     *
+     * @return \remiii\AWSDownloadCheckBundle\Entity\VideoTest 
+     */
+    public function getVideoTests()
+    {
+        return $this->videoTests;
+    }
 }
