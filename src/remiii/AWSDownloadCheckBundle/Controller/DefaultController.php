@@ -73,13 +73,13 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $tempTester->setIpAddress($request->getClientIp());
-            $tempTester->setUserAgent($request->headers->get('User-Agent'));
-            $em->persist($tempTester);
-            $em->flush();
-
-
+        if ($request->isMethod('POST')) {
+            if ($form->isValid()) {
+                $tempTester->setIpAddress($request->getClientIp());
+                $tempTester->setUserAgent($request->headers->get('User-Agent'));
+                $em->persist($tempTester);
+                $em->flush();
+            }
         }
 
         return array('form' => $form->createView());
