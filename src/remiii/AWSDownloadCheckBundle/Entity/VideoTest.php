@@ -40,7 +40,6 @@ class VideoTest
      * @var string
      * @ORM\Column(name="url_video", type="string", length=255)
      * @Assert\Length(max = 255)
-     * @Assert\Url()
      */
     private $urlVideo;
 
