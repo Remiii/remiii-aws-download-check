@@ -22,3 +22,9 @@ parameters:
     debug_toolbar:          true
     debug_redirects:        false
     use_assetic_controller: true
+
+    # Admin password
+    admin_login: administration
+    admin_password: ThisPasswordIsNotSoSecretChangeIt
+    aws_login: administration
+    aws_password: ThisPasswordIsNotSoSecretChangeIt
