@@ -20,6 +20,7 @@ class DefaultController extends Controller
     public function videoAction(Request $request, $videoNumber)
     {
         $videos = $this->container->getParameter('video');
+        $currentVideo = array_slice($videos, $videoNumber-1, 1);
 
         $em = $this->getDoctrine()->getManager();
         $tempTesterId = $request->query->get('tempTesterId');
@@ -38,6 +39,8 @@ class DefaultController extends Controller
         $videoTest = new VideoTest();
         $videoTest->setTester($tempTester);
         $videoTest->setIdVideo($videoNumber);
+        $videoTest->setTitleVideo(key($currentVideo));
+        $videoTest->setUrlVideo($currentVideo[key($currentVideo)]);
         $form = $this->createForm(new VideoTestType(), $videoTest);
 
         $form->handleRequest($request);
