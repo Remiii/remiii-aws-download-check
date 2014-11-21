@@ -2,8 +2,25 @@
 
 {% block body %}
 
-    <h1>Test video {{ videoNumber }}</h1>
+    <h2>Test video {{ videoNumber }} - {{ videoTitle }}</h2>
+
+    <div id="video-player" class="video-player"></div>
 
     {{ form(form) }}
 
 {% endblock body %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('vendor/jwplayer/jwplayer.js') }}"></script>
+    <script type="text/javascript">
+        jwplayer.key = "rbfdTQPgQ12F4CKwMQl0jRGoIC1facbntn2IAQ==";
+        jwplayer("video-player").setup({
+            file: "{{ videoUrl }}",
+            width: "100%",
+            autoplay: true,
+            autostart: true, // Not working on Chrome for Ubuntu without this option
+            aspectratio: '16:9'
+        });
+    </script>
+{% endblock %}
