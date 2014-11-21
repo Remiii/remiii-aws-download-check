@@ -13,4 +13,5 @@ web/.htaccess
 web/app.php
 web/app_dev.php
 web/robots.txt
+web/vendor/
 !.gitkeep

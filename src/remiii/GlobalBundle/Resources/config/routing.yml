@@ -1,0 +1,3 @@
+remiii_global_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: remiiiGlobalBundle:Default:index }

@@ -1,0 +1,4 @@
+services:
+#    remiii_aws_download_check.example:
+#        class: remiii\AWSDownloadCheckBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,15 +1,12 @@
 remiii_aws_download_check:
-    resource: "@remiiiAWSDownloadCheckBundle/Controller/"
-    type:     annotation
+    resource: "@remiiiAWSDownloadCheckBundle/Resources/config/routing.yml"
     prefix:   /
 
 remiii_corporate:
-    resource: "@remiiiCorporateBundle/Controller/"
-    type:     annotation
+    resource: "@remiiiCorporateBundle/Resources/config/routing.yml"
     prefix:   /
 
 remiii_global:
-    resource: "@remiiiGlobalBundle/Controller/"
-    type:     annotation
+    resource: "@remiiiGlobalBundle/Resources/config/routing.yml"
     prefix:   /
 

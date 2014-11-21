@@ -16,6 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
             new remiii\GlobalBundle\remiiiGlobalBundle(),
             new remiii\CorporateBundle\remiiiCorporateBundle(),
             new remiii\AWSDownloadCheckBundle\remiiiAWSDownloadCheckBundle(),
