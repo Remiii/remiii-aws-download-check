@@ -8,6 +8,10 @@ remiii_aws_download_check_final:
     path:     /final
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:final }
 
+remiii_aws_download_check_thanks:
+    path:     /thank-you
+    defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:thanks }
+
 remiii_aws_download_check_admin:
     path:     /admin
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:admin }

@@ -79,10 +79,20 @@ class DefaultController extends Controller
                 $tempTester->setUserAgent($request->headers->get('User-Agent'));
                 $em->persist($tempTester);
                 $em->flush();
+
+                return $this->redirect($this->generateUrl('remiii_aws_download_check_thanks'));
             }
         }
 
         return array('form' => $form->createView());
+    }
+
+    /**
+     * @Template
+     */
+    public function thanksAction()
+    {
+        return array();
     }
 
     /**
