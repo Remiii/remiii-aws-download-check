@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('remiiiAWSDownloadCheckBundle:Default:video.html.twig', array('videoNumber' => $videoNumber));
     }
+
+    public function finalAction()
+    {
+        return $this->render('remiiiAWSDownloadCheckBundle:Default:final.html.twig');
+    }
 }

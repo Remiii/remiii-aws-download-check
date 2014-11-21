@@ -1,3 +1,4 @@
 remiii_corporate_home:
     path:     /
     defaults: { _controller: remiiiCorporateBundle:Default:home }
+

@@ -1,3 +1,8 @@
 remiii_aws_download_check_video:
     path:     /video/{videoNumber}
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:video }
+
+remiii_aws_download_check_final:
+    path:     /final
+    defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:final }
+
