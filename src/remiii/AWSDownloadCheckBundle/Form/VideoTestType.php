@@ -34,6 +34,6 @@ class VideoTestType extends AbstractType
 
     public function getName()
     {
-        return 'video test';
+        return 'video_test';
     }
 }
