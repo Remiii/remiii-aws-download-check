@@ -29,7 +29,8 @@ class DefaultController extends Controller
         if (!$tempTester instanceof Tester) {
             if (1 == $videoNumber) {
                 $tempTester = new Tester();
-                $tempId = sha1($request->getClientIp() . '-' . date('now'));
+                $date = new \DateTime('now');
+                $tempId = sha1($request->getClientIp() . '-' . $date->getTimestamp() . '-' . uniqid(mt_rand(), true));
                 $tempTester->setTempId($tempId);
             } else {
                 // TODO: probably an error
