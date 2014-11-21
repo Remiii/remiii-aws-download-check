@@ -20,6 +20,9 @@ class AppKernel extends Kernel
             new remiii\GlobalBundle\remiiiGlobalBundle(),
             new remiii\CorporateBundle\remiiiCorporateBundle(),
             new remiii\AWSDownloadCheckBundle\remiiiAWSDownloadCheckBundle(),
+
+            new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

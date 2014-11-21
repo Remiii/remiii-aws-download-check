@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -72,15 +72,15 @@ swiftmailer:
     spool:     { type: memory }
 
 # Add for remiii-website-kiter
-#jms_i18n_routing:
-#    default_locale: en
-#    locales: [en, fr, de]
-#    strategy: prefix
+jms_i18n_routing:
+    default_locale: en
+    locales: [en, fr, de]
+    strategy: prefix
 
-#mopa_bootstrap:
-#    form:
-#        render_required_asterisk: true
-#        render_optional_text: false
+mopa_bootstrap:
+    form:
+        render_required_asterisk: true
+        render_optional_text: false
 
 
 
