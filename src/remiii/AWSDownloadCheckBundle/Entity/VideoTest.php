@@ -41,6 +41,7 @@ class VideoTest
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created", type="datetime")
+     * @Assert\DateTime()
      */
     private $created;
 
@@ -48,6 +49,7 @@ class VideoTest
      * @var \DateTime
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(name="modified", type="datetime")
+     * @Assert\DateTime()
      */
     private $modified;
 }

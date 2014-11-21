@@ -79,6 +79,7 @@ class Tester
      * @var string
      * @ORM\Column(name="ip_address", type="string", length=255, nullable=true)
      * @Assert\Length(max = 255)
+     * @Assert\Ip
      */
     private $ipAddress;
 
@@ -93,6 +94,7 @@ class Tester
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created", type="datetime")
+     * @Assert\DateTime()
      */
     private $created;
 
@@ -100,6 +102,7 @@ class Tester
      * @var \DateTime
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(name="modified", type="datetime")
+     * @Assert\DateTime()
      */
     private $modified;
 
