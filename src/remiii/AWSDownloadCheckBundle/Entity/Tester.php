@@ -14,6 +14,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="tester")
  * @ORM\Entity
  * @UniqueEntity("tempId")
+ * @ORM\HasLifecycleCallbacks
  */
 class Tester
 {
@@ -107,10 +108,88 @@ class Tester
     private $modified;
 
     /**
+     * @ORM\Column(name="screenshot_path", type="string", length=255, nullable=true)
+     */
+    public $screenshotPath;
+
+    /**
+     * @Assert\File(maxSize="2048k", mimeTypesMessage = "Please upload a file smaller than 2Mo")
+     */
+    private $screenshot;
+
+    public function getScreenshot()
+    {
+        return $this->screenshot;
+    }
+
+    public function setScreenshot($screenshot)
+    {
+        $this->screenshot = $screenshot;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->screenshotPath ? null : $this->getUploadRootDir().'/'.$this->screenshotPath;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->screenshotPath ? null : $this->getUploadDir().'/'.$this->screenshotPath;
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        return 'uploads/documents';
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload()
+    {
+        if (null !== $this->screenshot) {
+            // faites ce que vous voulez pour générer un nom unique
+            $this->screenshotPath = sha1(uniqid(mt_rand(), true)).'.'.$this->screenshot->guessExtension();
+        }
+    }
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if (null === $this->screenshot) {
+            return;
+        }
+
+        $this->screenshot->move($this->getUploadRootDir(), $this->screenshotPath);
+
+        unset($this->file);
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+    /**
      * @ORM\ManyToOne(targetEntity="VideoTest", inversedBy="tester")
      */
     private $videoTests;
-    
+
+
     /**
      * Get id
      *
@@ -372,6 +451,29 @@ class Tester
     public function getModified()
     {
         return $this->modified;
+    }
+
+    /**
+     * Set screenshotPath
+     *
+     * @param string $screenshotPath
+     * @return Tester
+     */
+    public function setScreenshotPath($screenshotPath)
+    {
+        $this->screenshotPath = $screenshotPath;
+
+        return $this;
+    }
+
+    /**
+     * Get screenshotPath
+     *
+     * @return string
+     */
+    public function getScreenshotPath()
+    {
+        return $this->screenshotPath;
     }
 
     /**

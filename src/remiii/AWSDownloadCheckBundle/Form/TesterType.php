@@ -34,6 +34,9 @@ class TesterType extends AbstractType
                 'choices' => array('wifi' => 'Wifi', 'filaire' => 'Filaire', 'autre' => 'Autre'),
                 'expanded' => true,
                 'required' => true
+            ->add('screenshot', 'file', array(
+                'data_class' => null,
+                'required' => false
             ))
             ->add('tempId', 'hidden', array())
             ->add('save', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
