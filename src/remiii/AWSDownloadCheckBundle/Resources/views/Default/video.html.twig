@@ -12,12 +12,12 @@
 
 {% block javascript %}
     {{ parent() }}
-    <script type="text/javascript" src="{{ asset('vendor/jwplayer/jwplayer.js') }}"></script>
+    <script type="text/javascript" src="http://jwpsrv.com/library/TQ5uttalEeOsKiIACrqE1A.js"></script>
     <script type="text/javascript">
         jwplayer.key = "rbfdTQPgQ12F4CKwMQl0jRGoIC1facbntn2IAQ==";
         jwplayer("video-player").setup({
             file: "{{ videoUrl }}",
-            width: "100%",
+            width: "60%",
             autoplay: true,
             autostart: true, // Not working on Chrome for Ubuntu without this option
             aspectratio: '16:9'
