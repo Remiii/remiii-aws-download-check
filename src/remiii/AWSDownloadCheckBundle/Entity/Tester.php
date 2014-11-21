@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Tester
  *
  * @ORM\Table(name="tester")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="remiii\AWSDownloadCheckBundle\Repository\TesterRepository")
  * @UniqueEntity("tempId")
  * @ORM\HasLifecycleCallbacks
  */
@@ -340,7 +340,7 @@ class Tester
      * @ORM\ManyToOne(targetEntity="VideoTest", inversedBy="tester")
      */
     private $videoTests;
-    
+
 
     /**
      * Get id
@@ -621,7 +621,7 @@ class Tester
     /**
      * Get speedtestScreenshotPath
      *
-     * @return string 
+     * @return string
      */
     public function getSpeedtestScreenshotPath()
     {
@@ -644,7 +644,7 @@ class Tester
     /**
      * Get cloudfrontScreenshotPath
      *
-     * @return string 
+     * @return string
      */
     public function getCloudfrontScreenshotPath()
     {
@@ -667,7 +667,7 @@ class Tester
     /**
      * Get expertPartOneScreenshotPath
      *
-     * @return string 
+     * @return string
      */
     public function getExpertPartOneScreenshotPath()
     {
@@ -690,7 +690,7 @@ class Tester
     /**
      * Get expertPartTwoScreenshotPath
      *
-     * @return string 
+     * @return string
      */
     public function getExpertPartTwoScreenshotPath()
     {

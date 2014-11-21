@@ -105,7 +105,14 @@ class DefaultController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        $results = $em->getRepository('remiiiAWSDownloadCheckBundle:Tester')->findAll();
+
+        $tests = $em->getRepository('remiiiAWSDownloadCheckBundle:Tester')->findAll();
+        $results [] = null ;
+        foreach ( $tests as $key => $test )
+        {
+            $videosResult = $em->getRepository('remiiiAWSDownloadCheckBundle:VideoTest')->findByTester($test->getId());
+            $results [ $key ] = array ( 'main' => $tests[$key] , 'videos' => $videosResult ) ;
+        }
         return array('results'=>$results);
     }
 

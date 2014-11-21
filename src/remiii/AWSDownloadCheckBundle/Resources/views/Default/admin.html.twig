@@ -5,7 +5,34 @@
 <h1>Admin</h1>
 
 {% for result in results %}
-    {{ result.id }}
+<h2>Test {{ result['main'].id }}</h2>
+<table class="table table-striped">
+    <tr>
+        <td>{{ result['main'].id }}</td>
+        <td>{{ result['main'].firstname|default('-') }}</td>
+        <td>{{ result['main'].lastname|default('-') }}</td>
+        <td>{{ result['main'].email|default('-') }}</td>
+        <td>{{ result['main'].isp|default('-') }}</td>
+        <td>{{ result['main'].connection_type|default('-') }}</td>
+        <td>{{ result['main'].routeur_link|default('-') }}</td>
+        <td>{{ result['main'].ip_address|default('-') }}</td>
+        <td>{{ result['main'].connection_type|default('-') }}</td>
+        <td>{{ result['main'].connection_type|default('-') }}</td>
+    </tr>
+</table>
+<table class="table table-striped">
+    <tr>
+        <td>{{ result['main'].user_agent|default('-' )}}</td>
+    </tr>
+</table>
+<table class="table table-striped">
+    {% for video in result['videos'] %}
+    <tr>
+        <td>{{ video.titleVideo }}</td>
+        <td>{{ video.readingQuality }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endfor %}
 
 {% endblock body %}
