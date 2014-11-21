@@ -4,6 +4,7 @@ namespace remiii\AWSDownloadCheckBundle\Controller;
 
 use remiii\AWSDownloadCheckBundle\Entity\Tester;
 use remiii\AWSDownloadCheckBundle\Entity\VideoTest;
+use remiii\AWSDownloadCheckBundle\Form\TesterType;
 use remiii\AWSDownloadCheckBundle\Form\VideoTestType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -63,9 +64,25 @@ class DefaultController extends Controller
     /**
     * @Template
     */
-    public function finalAction()
+    public function finalAction(Request $request)
     {
-        return array();
+        $em = $this->getDoctrine()->getManager();
+        $tempTesterId = $request->query->get('tempTesterId');
+        $tempTester = $em->getRepository('remiiiAWSDownloadCheckBundle:Tester')->findOneByTempId($tempTesterId);
+        $form = $this->createForm(new TesterType(), $tempTester);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $tempTester->setIpAddress($request->getClientIp());
+            $tempTester->setUserAgent($request->headers->get('User-Agent'));
+            $em->persist($tempTester);
+            $em->flush();
+
+
+        }
+
+        return array('form' => $form->createView());
     }
 
     /**
