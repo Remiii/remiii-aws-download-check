@@ -106,4 +106,8 @@ class Tester
      */
     private $modified;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="VideoTest", inversedBy="tester")
+     */
+    private $videoTests;
 }

@@ -58,4 +58,9 @@ class VideoTest
      * @Assert\DateTime()
      */
     private $modified;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Tester", inversedBy="videoTests")
+     */
+    private $tester;
 }
