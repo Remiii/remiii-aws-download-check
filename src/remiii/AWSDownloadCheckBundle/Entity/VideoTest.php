@@ -60,7 +60,7 @@ class VideoTest
     private $modified;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Tester", inversedBy="videoTests")
+     * @ORM\ManyToOne(targetEntity="Tester", inversedBy="videoTests", cascade={"persist"})
      */
     private $tester;
 
