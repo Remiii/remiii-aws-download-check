@@ -31,4 +31,4 @@ parameters:
 
     # Video array
     video:
-        video1: http://google.com
+        'video title': 'http://video-url.com'
