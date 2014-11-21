@@ -1,3 +1,3 @@
-remiii_aws_download_check_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:index }
+remiii_aws_download_check_video:
+    path:     /video/{videoNumber}
+    defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:video }

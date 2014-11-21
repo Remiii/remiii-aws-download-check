@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function videoAction($videoNumber)
     {
-        return $this->render('remiiiAWSDownloadCheckBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('remiiiAWSDownloadCheckBundle:Default:video.html.twig', array('videoNumber' => $videoNumber));
     }
 }
