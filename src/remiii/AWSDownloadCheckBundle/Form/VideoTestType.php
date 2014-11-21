@@ -20,8 +20,7 @@ class VideoTestType extends AbstractType
                 'required' => true
             ))
             ->add('idVideo', 'hidden', array())
-            ->add('testerTempId', 'hidden', array())
-            ->add('save', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
+            ->add('next', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
