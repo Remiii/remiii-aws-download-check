@@ -108,33 +108,147 @@ class Tester
     private $modified;
 
     /**
-     * @ORM\Column(name="screenshot_path", type="string", length=255, nullable=true)
+     * @ORM\Column(name="speedtest_screenshot_path", type="string", length=255, nullable=true)
      */
-    public $screenshotPath;
+    public $speedtestScreenshotPath;
 
     /**
      * @Assert\File(maxSize="2048k", mimeTypesMessage = "Please upload a file smaller than 2Mo")
      */
-    private $screenshot;
+    private $speedtestScreenshot;
 
-    public function getScreenshot()
+    /**
+     * @return mixed
+     */
+    public function getSpeedtestScreenshot()
     {
-        return $this->screenshot;
+        return $this->speedtestScreenshot;
     }
 
-    public function setScreenshot($screenshot)
+    /**
+     * @param mixed $speedtestScreenshot
+     */
+    public function setSpeedtestScreenshot($speedtestScreenshot)
     {
-        $this->screenshot = $screenshot;
+        $this->speedtestScreenshot = $speedtestScreenshot;
     }
 
-    public function getAbsolutePath()
+    /**
+     * @ORM\Column(name="cloudfront_screenshot_path", type="string", length=255, nullable=true)
+     */
+    public $cloudfrontScreenshotPath;
+
+    /**
+     * @Assert\File(maxSize="2048k", mimeTypesMessage = "Please upload a file smaller than 2Mo")
+     */
+    private $cloudfrontScreenshot;
+
+    /**
+     * @return mixed
+     */
+    public function getCloudfrontScreenshot()
     {
-        return null === $this->screenshotPath ? null : $this->getUploadRootDir().'/'.$this->screenshotPath;
+        return $this->cloudfrontScreenshot;
     }
 
-    public function getWebPath()
+    /**
+     * @param mixed $cloudfrontScreenshot
+     */
+    public function setCloudfrontScreenshot($cloudfrontScreenshot)
     {
-        return null === $this->screenshotPath ? null : $this->getUploadDir().'/'.$this->screenshotPath;
+        $this->cloudfrontScreenshot = $cloudfrontScreenshot;
+    }
+
+    /**
+     * @ORM\Column(name="expert_part_one_screenshot_path", type="string", length=255, nullable=true)
+     */
+    public $expertPartOneScreenshotPath;
+
+    /**
+     * @Assert\File(maxSize="2048k", mimeTypesMessage = "Please upload a file smaller than 2Mo")
+     */
+    private $expertPartOneScreenshot;
+
+    /**
+     * @return mixed
+     */
+    public function getExpertPartOneScreenshot()
+    {
+        return $this->expertPartOneScreenshot;
+    }
+
+    /**
+     * @param mixed $expertPartOneScreenshot
+     */
+    public function setExpertPartOneScreenshot($expertPartOneScreenshot)
+    {
+        $this->expertPartOneScreenshot = $expertPartOneScreenshot;
+    }
+
+    /**
+     * @ORM\Column(name="expert_part_two_screenshot_path", type="string", length=255, nullable=true)
+     */
+    public $expertPartTwoScreenshotPath;
+
+    /**
+     * @Assert\File(maxSize="2048k", mimeTypesMessage = "Please upload a file smaller than 2Mo")
+     */
+    private $expertPartTwoScreenshot;
+
+    /**
+     * @return mixed
+     */
+    public function getExpertPartTwoScreenshot()
+    {
+        return $this->expertPartTwoScreenshot;
+    }
+
+    /**
+     * @param mixed $expertPartTwoScreenshot
+     */
+    public function setExpertPartTwoScreenshot($expertPartTwoScreenshot)
+    {
+        $this->expertPartTwoScreenshot = $expertPartTwoScreenshot;
+    }
+
+    public function getSpeedtestScreenshotAbsolutePath()
+    {
+        return null === $this->speedtestScreenshotPath ? null : $this->getUploadRootDir().'/'.$this->speedtestScreenshotPath;
+    }
+
+    public function getSpeedtestScreenshotWebPath()
+    {
+        return null === $this->speedtestScreenshotPath ? null : $this->getUploadDir().'/'.$this->speedtestScreenshotPath;
+    }
+
+    public function getCloudfrontScreenshotAbsolutePath()
+    {
+        return null === $this->cloudfrontScreenshotPath ? null : $this->getUploadRootDir().'/'.$this->cloudfrontScreenshotPath;
+    }
+
+    public function getCloudfrontScreenshotWebPath()
+    {
+        return null === $this->cloudfrontScreenshotPath ? null : $this->getUploadDir().'/'.$this->cloudfrontScreenshotPath;
+    }
+
+    public function getExpertPartOneScreenshotAbsolutePath()
+    {
+        return null === $this->expertPartOneScreenshotPath ? null : $this->getUploadRootDir().'/'.$this->expertPartOneScreenshotPath;
+    }
+
+    public function getExpertPartOneScreenshotWebPath()
+    {
+        return null === $this->expertPartOneScreenshotPath ? null : $this->getUploadDir().'/'.$this->expertPartOneScreenshotPath;
+    }
+
+    public function getExpertPartTwoScreenshotAbsolutePath()
+    {
+        return null === $this->expertPartTwoScreenshotPath ? null : $this->getUploadRootDir().'/'.$this->expertPartTwoScreenshotPath;
+    }
+
+    public function getExpertPartTwoScreenshotWebPath()
+    {
+        return null === $this->expertPartTwoScreenshotPath ? null : $this->getUploadDir().'/'.$this->expertPartTwoScreenshotPath;
     }
 
     protected function getUploadRootDir()
@@ -153,9 +267,21 @@ class Tester
      */
     public function preUpload()
     {
-        if (null !== $this->screenshot) {
+        if (null !== $this->speedtestScreenshot) {
             // faites ce que vous voulez pour générer un nom unique
-            $this->screenshotPath = sha1(uniqid(mt_rand(), true)).'.'.$this->screenshot->guessExtension();
+            $this->speedtestScreenshotPath = sha1(uniqid(mt_rand(), true)).'.'.$this->speedtestScreenshot->guessExtension();
+        }
+        if (null !== $this->cloudfrontScreenshot) {
+            // faites ce que vous voulez pour générer un nom unique
+            $this->cloudfrontScreenshotPath = sha1(uniqid(mt_rand(), true)).'.'.$this->cloudfrontScreenshot->guessExtension();
+        }
+        if (null !== $this->expertPartOneScreenshot) {
+            // faites ce que vous voulez pour générer un nom unique
+            $this->expertPartOneScreenshotPath = sha1(uniqid(mt_rand(), true)).'.'.$this->expertPartOneScreenshot->guessExtension();
+        }
+        if (null !== $this->expertPartTwoScreenshot) {
+            // faites ce que vous voulez pour générer un nom unique
+            $this->expertPartTwoScreenshotPath = sha1(uniqid(mt_rand(), true)).'.'.$this->expertPartTwoScreenshot->guessExtension();
         }
     }
 
@@ -165,13 +291,30 @@ class Tester
      */
     public function upload()
     {
-        if (null === $this->screenshot) {
+        if (null === $this->speedtestScreenshot) {
             return;
+        } else {
+            $this->speedtestScreenshot->move($this->getUploadRootDir(), $this->speedtestScreenshotPath);
+            unset($this->speedtestScreenshot);
         }
-
-        $this->screenshot->move($this->getUploadRootDir(), $this->screenshotPath);
-
-        unset($this->file);
+        if (null === $this->cloudfrontScreenshot) {
+            return;
+        } else {
+            $this->cloudfrontScreenshot->move($this->getUploadRootDir(), $this->cloudfrontScreenshotPath);
+            unset($this->cloudfrontScreenshot);
+        }
+        if (null === $this->expertPartOneScreenshot) {
+            return;
+        } else {
+            $this->expertPartOneScreenshot->move($this->getUploadRootDir(), $this->expertPartOneScreenshotPath);
+            unset($this->expertPartOneScreenshot);
+        }
+        if (null === $this->expertPartTwoScreenshot) {
+            return;
+        } else {
+            $this->expertPartTwoScreenshot->move($this->getUploadRootDir(), $this->expertPartTwoScreenshotPath);
+            unset($this->expertPartTwoScreenshot);
+        }
     }
 
     /**
@@ -179,7 +322,16 @@ class Tester
      */
     public function removeUpload()
     {
-        if ($file = $this->getAbsolutePath()) {
+        if ($file = $this->getSpeedtestScreenshotAbsolutePath()) {
+            unlink($file);
+        }
+        if ($file = $this->getCloudfrontScreenshotAbsolutePath()) {
+            unlink($file);
+        }
+        if ($file = $this->getExpertPartOneScreenshotAbsolutePath()) {
+            unlink($file);
+        }
+        if ($file = $this->getExpertPartTwoScreenshotAbsolutePath()) {
             unlink($file);
         }
     }
@@ -188,7 +340,7 @@ class Tester
      * @ORM\ManyToOne(targetEntity="VideoTest", inversedBy="tester")
      */
     private $videoTests;
-
+    
 
     /**
      * Get id
@@ -454,26 +606,95 @@ class Tester
     }
 
     /**
-     * Set screenshotPath
+     * Set speedtestScreenshotPath
      *
-     * @param string $screenshotPath
+     * @param string $speedtestScreenshotPath
      * @return Tester
      */
-    public function setScreenshotPath($screenshotPath)
+    public function setSpeedtestScreenshotPath($speedtestScreenshotPath)
     {
-        $this->screenshotPath = $screenshotPath;
+        $this->speedtestScreenshotPath = $speedtestScreenshotPath;
 
         return $this;
     }
 
     /**
-     * Get screenshotPath
+     * Get speedtestScreenshotPath
      *
-     * @return string
+     * @return string 
      */
-    public function getScreenshotPath()
+    public function getSpeedtestScreenshotPath()
     {
-        return $this->screenshotPath;
+        return $this->speedtestScreenshotPath;
+    }
+
+    /**
+     * Set cloudfrontScreenshotPath
+     *
+     * @param string $cloudfrontScreenshotPath
+     * @return Tester
+     */
+    public function setCloudfrontScreenshotPath($cloudfrontScreenshotPath)
+    {
+        $this->cloudfrontScreenshotPath = $cloudfrontScreenshotPath;
+
+        return $this;
+    }
+
+    /**
+     * Get cloudfrontScreenshotPath
+     *
+     * @return string 
+     */
+    public function getCloudfrontScreenshotPath()
+    {
+        return $this->cloudfrontScreenshotPath;
+    }
+
+    /**
+     * Set expertPartOneScreenshotPath
+     *
+     * @param string $expertPartOneScreenshotPath
+     * @return Tester
+     */
+    public function setExpertPartOneScreenshotPath($expertPartOneScreenshotPath)
+    {
+        $this->expertPartOneScreenshotPath = $expertPartOneScreenshotPath;
+
+        return $this;
+    }
+
+    /**
+     * Get expertPartOneScreenshotPath
+     *
+     * @return string 
+     */
+    public function getExpertPartOneScreenshotPath()
+    {
+        return $this->expertPartOneScreenshotPath;
+    }
+
+    /**
+     * Set expertPartTwoScreenshotPath
+     *
+     * @param string $expertPartTwoScreenshotPath
+     * @return Tester
+     */
+    public function setExpertPartTwoScreenshotPath($expertPartTwoScreenshotPath)
+    {
+        $this->expertPartTwoScreenshotPath = $expertPartTwoScreenshotPath;
+
+        return $this;
+    }
+
+    /**
+     * Get expertPartTwoScreenshotPath
+     *
+     * @return string 
+     */
+    public function getExpertPartTwoScreenshotPath()
+    {
+        return $this->expertPartTwoScreenshotPath;
     }
 
     /**

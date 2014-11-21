@@ -27,9 +27,31 @@ class TesterType extends AbstractType
                 'choices' => array('wifi' => 'Wifi', 'filaire' => 'Filaire', 'autre' => 'Autre'),
                 'expanded' => true
             ))
-            ->add('screenshot', 'file', array(
+            ->add('speedtestScreenshot', 'file', array(
                 'data_class' => null,
-                'required' => false
+                'required' => false,
+                'help_block' => '<a href="http://speedtest.net" target="_blank">http://speedtest.net</a>'
+            ))
+            ->add('cloudfrontScreenshot', 'file', array(
+                'data_class' => null,
+                'required' => false,
+                'help_block' => '<a href="http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html" target="_blank">http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html</a>'
+            ))
+            ->add('expertPartOneScreenshot', 'file', array(
+                'data_class' => null,
+                'required' => false,
+                'help_block' => '<pre>dig s3.amazonaws.com
+dig video.i-players.com
+traceroute -T http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
+wget --server-response http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>'
+            ))
+            ->add('expertPartTwoScreenshot', 'file', array(
+                'data_class' => null,
+                'required' => false,
+                'help_block' => '<pre>dig resolver-identity.cloudfront.net
+dig video.i-players.com
+traceroute -T http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
+wget --server-response http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>'
             ))
             ->add('save', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
     }
