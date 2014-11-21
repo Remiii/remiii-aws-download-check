@@ -6,7 +6,4 @@ remiii_corporate:
     resource: "@remiiiCorporateBundle/Resources/config/routing.yml"
     prefix:   /
 
-remiii_global:
-    resource: "@remiiiGlobalBundle/Resources/config/routing.yml"
-    prefix:   /
 
