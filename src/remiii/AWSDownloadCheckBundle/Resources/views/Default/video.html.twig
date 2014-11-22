@@ -1,5 +1,7 @@
 {% extends '::layout.html.twig' %}
 
+{% block title %}{{ parent() }} - Video {{ videoNumber }}/{{ numberOfVideos }}{% endblock title %}
+
 {% block body %}
 
     <h1>Test video {{ videoNumber }}/{{ numberOfVideos }}</h1>
