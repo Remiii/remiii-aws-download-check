@@ -30,6 +30,7 @@
             {% for video in result['videos'] %}
             <tr>
                 <td>{{ video.titleVideo }}</td>
+                <td>{{ video.downloadTime }}</td>
                 <td>{{ video.readingQuality }}</td>
                 <td>{{ video.urlVideo }}</td>
             </tr>
@@ -40,13 +41,13 @@
                 <td><a href="/uploads/documents/{{ result['main'].speedtestScreenshotPath|default('-' )}}" target="_blank">Speedtest screenshot</a></td>
             </tr>
             <tr>
-                <td><a href="{{ result['main'].cloudfrontScreenshotPath|default('-' )}}" target="_blank">CloudFront test screenshot</a></td>
+                <td><a href="/uploads/documents/{{ result['main'].cloudfrontScreenshotPath|default('-' )}}" target="_blank">CloudFront test screenshot</a></td>
             </tr>
             <tr>
-                <td><a href="{{ result['main'].expertPartOneScreenshotPath|default('-' )}}" target="_blank">Expert part 1 screenshot</a></td>
+                <td><a href="/uploads/documents/{{ result['main'].expertPartOneScreenshotPath|default('-' )}}" target="_blank">Expert part 1 screenshot</a></td>
             </tr>
             <tr>
-                <td><a href="{{ result['main'].expertPartOneScreenshotPath|default('-' )}}" target="_blank">Expert part 2 screenshot</a></td>
+                <td><a href="/uploads/documents/{{ result['main'].expertPartTwoScreenshotPath|default('-' )}}" target="_blank">Expert part 2 screenshot</a></td>
             </tr>
         </table>
     {% endfor %}

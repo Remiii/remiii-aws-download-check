@@ -44,16 +44,14 @@ class VideoTest
     private $urlVideo;
 
     /**
-     * @var string
-     * @ORM\Column(name="download_time", type="string", length=255)
-     * @Assert\Length(max = 255)
+     * @var integer
+     * @ORM\Column(name="download_time", type="integer")
      */
     private $downloadTime;
 
     /**
      * @var string
-     * @ORM\Column(name="reading_quality", type="string", length=255)
-     * @Assert\Length(max = 255)
+     * @ORM\Column(name="reading_quality", type="integer")
      */
     private $readingQuality;
 
