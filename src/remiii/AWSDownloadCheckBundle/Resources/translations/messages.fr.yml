@@ -1,4 +1,13 @@
 text_thank_for_your_help: merci beaucoup pour votre aide !
 form_download_time: temps de pré-chargement
 form_reading_quality: qualité de lecture
-fluid: vsvxcvxcvx
+form_firstname: prénom
+form_lastname: nom
+form_email: email
+form_isp: fournisseur d'accès à internet
+form_connexion_type: type de connection
+form_router_link: lien avec le routeur
+form_speedtest_screenshot: Copie écran
+form_cloudfront_screenshot: Copie écran
+form_expert_part_one_screenshot: Copie écran
+form_expert_part_two_screenshot: Copie écran

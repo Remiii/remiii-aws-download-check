@@ -4,6 +4,72 @@
 
     <h1>Final</h1>
 
-    {{ form(form) }}
-
+    <div class="row">
+        <div class="col-lg-10">
+            {{ form_start(form, {'attr': {'class': ''}}) }}
+                <div class="form-group">
+                    {{ form_label(form.firstname, 'form_firstname'|trans|capitalize) }}
+                    {{ form_errors(form.firstname) }}
+                    {{ form_widget(form.firstname, {'attr': { 'placeholder':'Harvey'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.lastname, 'form_lastname'|trans|capitalize ) }}
+                    {{ form_errors(form.lastname) }}
+                    {{ form_widget(form.lastname, {'attr': { 'placeholder':'Specter'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.email, 'form_email'|trans|capitalize ) }}
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email, {'attr': { 'placeholder':'harvey@gmail.com'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.isp, 'form_isp'|trans|capitalize ) }}
+                    {{ form_errors(form.isp) }}
+                    {{ form_widget(form.isp, {'attr': { 'placeholder':'Orange'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.connexionType, 'form_connexion_type'|trans|capitalize ) }}
+                    {{ form_errors(form.connexionType) }}
+                    {{ form_widget(form.connexionType, {'attr': { 'data-parsley-trigger':'change'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.routerLink, 'form_router_link'|trans|capitalize ) }}
+                    {{ form_errors(form.routerLink) }}
+                    {{ form_widget(form.routerLink, {'attr': { 'data-parsley-trigger':'change'}}) }}
+                </div>
+                <p><a href="http://speedtest.net" target="_blank">http://speedtest.net</a></p>
+                <div class="form-group">
+                    {{ form_label(form.speedtestScreenshot, 'form_speedtest_screenshot'|trans|capitalize ) }}
+                    {{ form_errors(form.speedtestScreenshot) }}
+                    {{ form_widget(form.speedtestScreenshot) }}
+                </div>
+                <p><a href="http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html" target="_blank">http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html</a></p>
+                <div class="form-group">
+                    {{ form_label(form.cloudfrontScreenshot, 'form_cloudfront_screenshot'|trans|capitalize ) }}
+                    {{ form_errors(form.cloudfrontScreenshot) }}
+                    {{ form_widget(form.cloudfrontScreenshot) }}
+                </div>
+                <h2>$_ Expert part</h2>
+                <pre>$ dig s3.amazonaws.com
+$ dig video.i-players.com
+$ traceroute -T http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
+$ wget --server-response http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>
+                <div class="form-group">
+                    {{ form_label(form.expertPartOneScreenshot, 'form_expert_part_one_screenshot'|trans|capitalize ) }}
+                    {{ form_errors(form.expertPartOneScreenshot) }}
+                    {{ form_widget(form.expertPartOneScreenshot) }}
+                </div>
+                <pre>$ dig resolver-identity.cloudfront.net
+$ dig video.i-players.com
+$ traceroute -T http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
+$ wget --server-response http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>
+                <div class="form-group">
+                    {{ form_label(form.expertPartTwoScreenshot, 'form_expert_part_two_screenshot'|trans|capitalize ) }}
+                    {{ form_errors(form.expertPartTwoScreenshot) }}
+                    {{ form_widget(form.expertPartTwoScreenshot) }}
+                </div>
+                {{ form_row(form.save, { 'label': 'save'|trans|capitalize }) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock body %}

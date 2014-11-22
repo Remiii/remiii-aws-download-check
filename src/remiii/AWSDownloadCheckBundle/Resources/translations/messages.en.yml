@@ -1,4 +1,13 @@
 text_thank_for_your_help: thank you for your help!
 form_download_time: predownload time
 form_reading_quality: reading quality
-fluid: zeeeee
+form_firstname: firstname
+form_lastname: lastname
+form_email: email
+form_isp: ISP
+form_connexion_type: connexion type
+form_router_link: router link
+form_speedtest_screenshot: screentest
+form_cloudfront_screenshot: sreenshot
+form_expert_part_one_screenshot: sceenshot
+form_expert_part_two_screenshot: sceenshot

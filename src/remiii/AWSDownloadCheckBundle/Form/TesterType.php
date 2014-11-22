@@ -20,38 +20,30 @@ class TesterType extends AbstractType
                 'label'  => 'Internet Service Provider',
             ))
             ->add('connexionType', 'choice', array(
-                'choices' => array('adsl' => 'ADSL', 'sdsl' => 'SDSL', 'vdsl' => 'VDSL', 'fibre' => 'Fibre', '3g' => '3G', '4g' => '4G'),
+                'choices' => array('adsl' => 'ADSL', 'sdsl' => 'SDSL', 'vdsl' => 'VDSL', 'fibre' => 'Fibre', '3g' => '3G', '4g' => '4G', 'other' => 'Autre'),
                 'expanded' => true,
+                'widget_type' => 'inline'
             ))
             ->add('routerLink', 'choice', array(
-                'choices' => array('wifi' => 'Wifi', 'filaire' => 'Filaire', 'autre' => 'Autre'),
-                'expanded' => true
+                'choices' => array('wifi' => 'Wifi', 'wire' => 'Filaire', 'other' => 'Autre'),
+                'expanded' => true,
+                'widget_type' => 'inline'
             ))
             ->add('speedtestScreenshot', 'file', array(
                 'data_class' => null,
-                'required' => false,
-                'help_block' => '<a href="http://speedtest.net" target="_blank">http://speedtest.net</a>'
+                'required' => false
             ))
             ->add('cloudfrontScreenshot', 'file', array(
                 'data_class' => null,
-                'required' => false,
-                'help_block' => '<a href="http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html" target="_blank">http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html</a>'
+                'required' => false
             ))
             ->add('expertPartOneScreenshot', 'file', array(
                 'data_class' => null,
-                'required' => false,
-                'help_block' => '<pre>dig s3.amazonaws.com
-dig video.i-players.com
-traceroute -T http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
-wget --server-response http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>'
+                'required' => false
             ))
             ->add('expertPartTwoScreenshot', 'file', array(
                 'data_class' => null,
-                'required' => false,
-                'help_block' => '<pre>dig resolver-identity.cloudfront.net
-dig video.i-players.com
-traceroute -T http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
-wget --server-response http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>'
+                'required' => false
             ))
             ->add('save', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
     }

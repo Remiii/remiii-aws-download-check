@@ -63,3 +63,9 @@ $ php app/console assets:install --symlink
 $ php app/console assetic:dump --env=prod --no-debug
 ```
 
+## Write access to the /uploads/documents folder
+
+```sh
+$ chmod 777 web/uploads/documents
+```
+
