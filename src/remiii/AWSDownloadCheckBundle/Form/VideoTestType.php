@@ -17,7 +17,7 @@ class VideoTestType extends AbstractType
                 'choices' => array('fast' => 'Fast (<5sec)', 'normal' => 'Normal', 'slow' => 'Slow (>15sec)')
             ))
             ->add('readingQuality', 'choice', array(
-                'choices' => array('5/5' => '5/5: Fluidité au top :-)', '4/5' => '4/5: Fluide', '3/5' => '3/5: Ca rame', '2/5' => '2/5: Rame trop / pas regardable', '1/5' => '1/5: Je ne vois pas la video )-:')
+                'choices' => array('5/5' => '5/5: Fluidité au top :-)', '4/5' => '4/5: Fluide', '3/5' => '3/5: Ca rame', '2/5' => '2/5: Rame trop / pas regardable', '1/5' => '1/5: Je ne vois pas la video :-(')
             ))
             ->add('next', 'submit', array('attr' => array('class' => 'btn btn-default pull-right')));
     }
