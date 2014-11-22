@@ -23,7 +23,7 @@
                 <div class="form-group">
                     {{ form_label(form.readingQuality, 'form_reading_quality'|trans|capitalize ) }}
                     {{ form_errors(form.readingQuality) }}
-                    {{ form_widget(form.readingQuality, {'attr': { 'data-parsley-trigger':'change','data-parsley-type':'number'}}) }}
+                    {{ form_widget(form.readingQuality, {'attr': { 'data-parsley-trigger':'change'}}) }}
                 </div>
                 {{ form_row(form.next, { 'label': 'next'|trans|capitalize }) }}
             {{ form_end(form) }}
