@@ -37,19 +37,21 @@
                     {{ form_errors(form.routerLink) }}
                     {{ form_widget(form.routerLink, {'attr': { 'data-parsley-trigger':'change'}}) }}
                 </div>
-                <p><a href="http://speedtest.net" target="_blank">http://speedtest.net</a></p>
+                <p>{{ 'text_3part_test_explanation_part1'|trans|capitalize }} <a href="http://speedtest.net" target="_blank">Speedtest.net</a>, {{ 'text_3part_test_explanation_part2'|trans }}.</p>
                 <div class="form-group">
                     {{ form_label(form.speedtestScreenshot, 'form_speedtest_screenshot'|trans|capitalize ) }}
                     {{ form_errors(form.speedtestScreenshot) }}
                     {{ form_widget(form.speedtestScreenshot) }}
                 </div>
-                <p><a href="http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html" target="_blank">http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html</a></p>
+                <p>{{ 'text_3part_test_explanation_part1'|trans|capitalize }} <a href="http://d7uri8nf7uskq.cloudfront.net/JsTestBig.html" target="_blank">AWS tests</a>, {{ 'text_3part_test_explanation_part2'|trans }}.</p>
                 <div class="form-group">
                     {{ form_label(form.cloudfrontScreenshot, 'form_cloudfront_screenshot'|trans|capitalize ) }}
                     {{ form_errors(form.cloudfrontScreenshot) }}
                     {{ form_widget(form.cloudfrontScreenshot) }}
                 </div>
-                <h2>$_ Expert part</h2>
+                <div class="well">
+                <h3>$_ Expert part</h3>
+                <p>{{ 'text_expert_part_explanation'|trans }}</p>
                 <pre>$ dig s3.amazonaws.com
 $ dig video.i-players.com
 $ traceroute -T http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
@@ -59,6 +61,7 @@ $ wget --server-response http://video.i-players.com/a4f092966a23e7edea120de3e3e0
                     {{ form_errors(form.expertPartOneScreenshot) }}
                     {{ form_widget(form.expertPartOneScreenshot) }}
                 </div>
+                <p>{{ 'text_expert_part_explanation'|trans }}</p>
                 <pre>$ dig resolver-identity.cloudfront.net
 $ dig video.i-players.com
 $ traceroute -T http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
@@ -68,6 +71,8 @@ $ wget --server-response http://cdn.video.i-players.com/a4f092966a23e7edea120de3
                     {{ form_errors(form.expertPartTwoScreenshot) }}
                     {{ form_widget(form.expertPartTwoScreenshot) }}
                 </div>
+                </div>
+                <p>{{ 'text_finish_part'|trans }}</p>
                 {{ form_row(form.save, { 'label': 'save'|trans|capitalize }) }}
             {{ form_end(form) }}
         </div>
