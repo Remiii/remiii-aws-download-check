@@ -16,16 +16,14 @@
                 <td>{{ result['main'].lastname|default('-') }}</td>
                 <td>{{ result['main'].email|default('-') }}</td>
                 <td>{{ result['main'].isp|default('-') }}</td>
-                <td>{{ result['main'].connection_type|default('-') }}</td>
-                <td>{{ result['main'].routeur_link|default('-') }}</td>
-                <td>{{ result['main'].ip_address|default('-') }}</td>
-                <td>{{ result['main'].connection_type|default('-') }}</td>
-                <td>{{ result['main'].connection_type|default('-') }}</td>
+                <td>{{ result['main'].connexionType|default('-') }}</td>
+                <td>{{ result['main'].routerLink|default('-') }}</td>
+                <td>{{ result['main'].ipAddress|default('-') }}</td>
             </tr>
         </table>
         <table class="table table-striped">
             <tr>
-                <td>{{ result['main'].user_agent|default('-' )}}</td>
+                <td>{{ result['main'].userAgent|default('-' )}}</td>
             </tr>
         </table>
         <table class="table table-striped">
@@ -39,16 +37,16 @@
         </table>
         <table class="table table-striped">
             <tr>
-                <td>{{ result['main'].speedtestScreenshotPath|default('-' )}}</td>
+                <td><a href="/uploads/documents/{{ result['main'].speedtestScreenshotPath|default('-' )}}" target="_blank">Speedtest screenshot</a></td>
             </tr>
             <tr>
-                <td>{{ result['main'].cloudfrontScreenshotPath|default('-' )}}</td>
+                <td><a href="{{ result['main'].cloudfrontScreenshotPath|default('-' )}}" target="_blank">CloudFront test screenshot</a></td>
             </tr>
             <tr>
-                <td>{{ result['main'].expertPartOneScreenshotPath|default('-' )}}</td>
+                <td><a href="{{ result['main'].expertPartOneScreenshotPath|default('-' )}}" target="_blank">Expert part 1 screenshot</a></td>
             </tr>
             <tr>
-                <td>{{ result['main'].expertPartOneScreenshotPath|default('-' )}}</td>
+                <td><a href="{{ result['main'].expertPartOneScreenshotPath|default('-' )}}" target="_blank">Expert part 2 screenshot</a></td>
             </tr>
         </table>
     {% endfor %}
