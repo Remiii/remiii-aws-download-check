@@ -14,7 +14,7 @@ class VideoTestType extends AbstractType
     {
         $builder
             ->add('downloadTime', 'choice', array(
-                'choices' => array('fast' => 'Fast', 'normal' => 'Normal', 'slow' => 'Slow')
+                'choices' => array('fast' => 'Fast (<5sec)', 'normal' => 'Normal', 'slow' => 'Slow (>15sec)')
             ))
             ->add('readingQuality', 'choice', array(
                 'choices' => array('top' => 'Fluidité au top', 'fluide' => 'Fluide', 'rame' => 'Ca rame', 'lent' => 'Rame trop / pas regardable', 'cassé' => 'Je ne vois pas la video')
