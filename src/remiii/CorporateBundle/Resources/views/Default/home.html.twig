@@ -2,8 +2,10 @@
 
 {% block body %}
 
-    <h1>My home page</h1>
-
-    <p>To start the tests, <a href="{{ path('remiii_aws_download_check_video', {videoNumber: 1}) }}">click here</a></p>
+    <div class="jumbotron">
+        <h1>AWS Download check</h1>
+        <p>{{ 'text_claim'|trans }}.</p>
+        <p><a class="btn btn-primary btn-lg" href="{{ path('remiii_aws_download_check_video', {videoNumber: 1}) }}" role="button">{{ 'start_the_tests'|trans|capitalize }}</a></p>
+    </div>
 
 {% endblock body %}
