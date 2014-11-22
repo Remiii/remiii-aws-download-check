@@ -41,6 +41,12 @@ Update 'parameters.yml'.
 $ composer install
 ```
 
+## Vendro JS (bower)
+
+```sh
+$ bower install
+```
+
 ## Setup DB
 
 ```
