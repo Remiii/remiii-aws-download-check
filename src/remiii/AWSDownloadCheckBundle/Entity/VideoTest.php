@@ -50,7 +50,7 @@ class VideoTest
     private $downloadTime;
 
     /**
-     * @var string
+     * @var integer
      * @ORM\Column(name="reading_quality", type="integer")
      */
     private $readingQuality;
