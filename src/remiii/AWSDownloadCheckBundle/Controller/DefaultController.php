@@ -21,6 +21,7 @@ class DefaultController extends Controller
     public function videoAction(Request $request, $videoNumber)
     {
         $videos = $this->container->getParameter('video');
+        $numberOfVideos = count($videos) ;
         if (count($videos) < $videoNumber) {
             throw $this->createNotFoundException('you are lost.');
         }
@@ -55,13 +56,13 @@ class DefaultController extends Controller
             $em->flush();
 
             if (count($videos) >= $videoNumber+1) {
-                return $this->redirect($this->generateUrl('remiii_aws_download_check_video', array('videoNumber' => $videoNumber+1, 'tempTesterId' => $tempTester->getTempId())));
+                return $this->redirect($this->generateUrl('remiii_aws_download_check_video', array('videoNumber' => $videoNumber+1, 'numberOfVideos' => $numberOfVideos, 'tempTesterId' => $tempTester->getTempId())));
             } else {
                 return $this->redirect($this->generateUrl('remiii_aws_download_check_final', array('tempTesterId' => $tempTester->getTempId())));
             }
         }
 
-        return array('videoNumber' => $videoNumber, 'form' => $form->createView(), 'videoTitle' => key($currentVideo), 'videoUrl' => $currentVideo[key($currentVideo)]);
+        return array('videoNumber' => $videoNumber, 'numberOfVideos' => $numberOfVideos, 'form' => $form->createView(), 'videoTitle' => key($currentVideo), 'videoUrl' => $currentVideo[key($currentVideo)]);
     }
 
     /**
