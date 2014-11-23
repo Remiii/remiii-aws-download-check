@@ -27,17 +27,17 @@
                 <div class="form-group">
                     {{ form_label(form.isp, 'form_isp'|trans|capitalize ) }}
                     {{ form_errors(form.isp) }}
-                    {{ form_widget(form.isp, {'attr': { 'placeholder':'Orange'}}) }}
+                    {{ form_widget(form.isp) }}
                 </div>
                 <div class="form-group">
                     {{ form_label(form.connexionType, 'form_connexion_type'|trans|capitalize ) }}
                     {{ form_errors(form.connexionType) }}
-                    {{ form_widget(form.connexionType, {'attr': { 'data-parsley-trigger':'change'}}) }}
+                    {{ form_widget(form.connexionType) }}
                 </div>
                 <div class="form-group">
                     {{ form_label(form.routerLink, 'form_router_link'|trans|capitalize ) }}
                     {{ form_errors(form.routerLink) }}
-                    {{ form_widget(form.routerLink, {'attr': { 'data-parsley-trigger':'change'}}) }}
+                    {{ form_widget(form.routerLink) }}
                 </div>
                 <p>{{ 'text_3part_test_explanation_part1'|trans|capitalize }} <a href="http://speedtest.net" target="_blank">Speedtest.net</a>, {{ 'text_3part_test_explanation_part2'|trans }}.</p>
                 <div class="form-group">

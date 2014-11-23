@@ -16,8 +16,10 @@ class TesterType extends AbstractType
             ->add('firstname')
             ->add('lastname')
             ->add('email')
-            ->add('isp', null, array(
-                'label'  => 'Internet Service Provider',
+            ->add('isp', 'choice', array(
+                'choices' => array('orange' => 'Orange', 'free' => 'Free', 'numericable' => 'Numericable', 'sfr' => 'SFR', 'bouygues' => 'Bouygues', 'darty' => 'Darty', 'atnt' => 'AT&T', 'other' => 'Autre'),
+                'expanded' => true,
+                'widget_type' => 'inline'
             ))
             ->add('connexionType', 'choice', array(
                 'choices' => array('adsl' => 'ADSL', 'sdsl' => 'SDSL', 'vdsl' => 'VDSL', 'fibre' => 'Fibre', '3g' => '3G', '4g' => '4G', 'other' => 'Autre'),
