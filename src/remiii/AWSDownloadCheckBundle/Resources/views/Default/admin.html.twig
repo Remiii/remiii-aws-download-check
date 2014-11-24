@@ -7,7 +7,7 @@
     <h1>Admin</h1>
 
     {% for result in results %}
-        <h2>Test {{ result['main'].id }}</h2>
+        <h2 id="test{{ result['main'].id }}">Test {{ result['main'].id }}</h2>
         <table class="table table-striped">
             <tr>
                 <td>{{ result['main'].id }}</td>
