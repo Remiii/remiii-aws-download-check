@@ -3,16 +3,23 @@ remiii_aws_download_check_video:
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:video }
     requirements:
         videoNumber: "^\d+$"
+        _method:  GET|POST
 
 remiii_aws_download_check_final:
     path:     /final
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:final }
+    requirements:
+        _method:  GET|POST
 
 remiii_aws_download_check_thanks:
     path:     /thank-you
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:thanks }
+    requirements:
+        _method:  GET
 
 remiii_aws_download_check_admin:
     path:     /admin
     defaults: { _controller: remiiiAWSDownloadCheckBundle:Default:admin }
+    requirements:
+        _method:  GET
 

@@ -1,4 +1,6 @@
 remiii_corporate_home:
     path:     /
     defaults: { _controller: remiiiCorporateBundle:Default:home }
+    requirements:
+        _method:  GET
 
