@@ -7,8 +7,19 @@
     <h1>Admin</h1>
 
     {% for result in results %}
-        <h2 id="test{{ result['main'].id }}">Test {{ result['main'].id }}</h2>
-        <table class="table table-striped">
+        <h2 id="test{{ result['main'].id }}">$_ Test {{ result['main'].id }}</h2>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <th>Id</th>
+                <th>Date (Paris TZ)</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>ISP</th>
+                <th>Connexion type</th>
+                <th>Router link</th>
+                <th>IP Address</th>
+            </tr>
             <tr>
                 <td>{{ result['main'].id }}</td>
                 <td>{{ result['main'].created|date('Y-m-d H:i:s') }}</td>
@@ -21,22 +32,34 @@
                 <td>{{ result['main'].ipAddress|default('-') }}</td>
             </tr>
         </table>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <th>UserAgent</th>
+            </tr>
             <tr>
                 <td>{{ result['main'].userAgent|default('-' )}}</td>
             </tr>
         </table>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <th>Video title</th>
+                <th>Predownload time</th>
+                <th>Reading quality</th>
+                <th>Video URL</th>
+            </tr>
             {% for video in result['videos'] %}
             <tr>
                 <td>{{ video.titleVideo }}</td>
-                <td>{{ video.downloadTime }}</td>
-                <td>{{ video.readingQuality }}</td>
-                <td>{{ video.urlVideo }}</td>
+                <td>{{ video.downloadTime }}/3</td>
+                <td>{{ video.readingQuality }}/5</td>
+                <td style="font-size:8px;font-style:italic;">{{ video.urlVideo }}</td>
             </tr>
             {% endfor %}
         </table>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <th>Screenshot link</th>
+            </tr>
             {% if result['main'].speedtestScreenshotPath is not empty %}
                 <tr>
                     <td><a href="/uploads/documents/{{ result['main'].speedtestScreenshotPath }}" target="_blank">Speedtest screenshot</a></td>
