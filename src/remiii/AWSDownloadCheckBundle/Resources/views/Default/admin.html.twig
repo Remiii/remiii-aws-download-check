@@ -2,6 +2,9 @@
 
 {% block title %}{{ parent() }} - Admin{% endblock title %}
 
+{% set downloadTime = [ 'Slow (<5sec)', 'Normal', 'Fast (<5sec)' ] %}
+{% set readingQuality = [ 'Broken', 'Realy bad', 'Bad', 'Good', 'Very good' ] %}
+
 {% block body %}
 
     <h1>Admin</h1>
@@ -51,8 +54,8 @@
                 {% for video in result['videos'] %}
                 <tr>
                     <td>{{ video.titleVideo }}</td>
-                    <td>{{ video.downloadTime }}/3</td>
-                    <td>{{ video.readingQuality }}/5</td>
+                    <td>{{ video.downloadTime }}/3 - {{ downloadTime[video.downloadTime-1] }}</td>
+                    <td>{{ video.readingQuality }}/5 - {{ readingQuality[video.readingQuality-1] }}</td>
                     <td style="font-size:8px;font-style:italic;">{{ video.urlVideo }}</td>
                 </tr>
                 {% endfor %}
