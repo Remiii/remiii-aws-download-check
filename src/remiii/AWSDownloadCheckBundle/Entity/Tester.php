@@ -371,42 +371,31 @@ class Tester
      */
     public function upload()
     {
-        if (null === $this->speedtestScreenshot) {
-            return;
-        } else {
+        if (null !== $this->speedtestScreenshot) {
             $this->speedtestScreenshot->move($this->getUploadRootDir(), $this->speedtestScreenshotPath);
             unset($this->speedtestScreenshot);
         }
-        if (null === $this->cloudfrontScreenshot) {
-            return;
-        } else {
+        if (null !== $this->cloudfrontScreenshot) {
             $this->cloudfrontScreenshot->move($this->getUploadRootDir(), $this->cloudfrontScreenshotPath);
             unset($this->cloudfrontScreenshot);
         }
-        if (null === $this->expertPartOneScreenshot) {
-            return;
-        } else {
+        if (null !== $this->expertPartOneScreenshot) {
             $this->expertPartOneScreenshot->move($this->getUploadRootDir(), $this->expertPartOneScreenshotPath);
             unset($this->expertPartOneScreenshot);
         }
-        if (null === $this->expertPartOneNextScreenshot) {
-            return;
-        } else {
+        if (null !== $this->expertPartOneNextScreenshot) {
             $this->expertPartOneNextScreenshot->move($this->getUploadRootDir(), $this->expertPartOneNextScreenshotPath);
             unset($this->expertPartOneNextScreenshot);
         }
-        if (null === $this->expertPartTwoScreenshot) {
-            return;
-        } else {
+        if (null !== $this->expertPartTwoScreenshot) {
             $this->expertPartTwoScreenshot->move($this->getUploadRootDir(), $this->expertPartTwoScreenshotPath);
             unset($this->expertPartTwoScreenshot);
         }
-        if (null === $this->expertPartTwoNextScreenshot) {
-            return;
-        } else {
+        if (null !== $this->expertPartTwoNextScreenshot) {
             $this->expertPartTwoNextScreenshot->move($this->getUploadRootDir(), $this->expertPartTwoNextScreenshotPath);
             unset($this->expertPartTwoNextScreenshot);
         }
+
     }
 
     /**
@@ -440,10 +429,11 @@ class Tester
     private $videoTests;
 
 
+
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -466,7 +456,7 @@ class Tester
     /**
      * Get tempId
      *
-     * @return string
+     * @return string 
      */
     public function getTempId()
     {
@@ -489,7 +479,7 @@ class Tester
     /**
      * Get firstname
      *
-     * @return string
+     * @return string 
      */
     public function getFirstname()
     {
@@ -512,7 +502,7 @@ class Tester
     /**
      * Get lastname
      *
-     * @return string
+     * @return string 
      */
     public function getLastname()
     {
@@ -535,7 +525,7 @@ class Tester
     /**
      * Get email
      *
-     * @return string
+     * @return string 
      */
     public function getEmail()
     {
@@ -558,7 +548,7 @@ class Tester
     /**
      * Get isp
      *
-     * @return string
+     * @return string 
      */
     public function getIsp()
     {
@@ -581,7 +571,7 @@ class Tester
     /**
      * Get connexionType
      *
-     * @return string
+     * @return string 
      */
     public function getConnexionType()
     {
@@ -604,7 +594,7 @@ class Tester
     /**
      * Get routerLink
      *
-     * @return string
+     * @return string 
      */
     public function getRouterLink()
     {
@@ -627,7 +617,7 @@ class Tester
     /**
      * Get ipAddress
      *
-     * @return string
+     * @return string 
      */
     public function getIpAddress()
     {
@@ -650,7 +640,7 @@ class Tester
     /**
      * Get userAgent
      *
-     * @return string
+     * @return string 
      */
     public function getUserAgent()
     {
@@ -673,7 +663,7 @@ class Tester
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getCreated()
     {
@@ -696,7 +686,7 @@ class Tester
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getModified()
     {
@@ -719,7 +709,7 @@ class Tester
     /**
      * Get speedtestScreenshotPath
      *
-     * @return string
+     * @return string 
      */
     public function getSpeedtestScreenshotPath()
     {
@@ -742,7 +732,7 @@ class Tester
     /**
      * Get cloudfrontScreenshotPath
      *
-     * @return string
+     * @return string 
      */
     public function getCloudfrontScreenshotPath()
     {
@@ -765,57 +755,11 @@ class Tester
     /**
      * Get expertPartOneScreenshotPath
      *
-     * @return string
+     * @return string 
      */
     public function getExpertPartOneScreenshotPath()
     {
         return $this->expertPartOneScreenshotPath;
-    }
-
-    /**
-     * Set expertPartTwoScreenshotPath
-     *
-     * @param string $expertPartTwoScreenshotPath
-     * @return Tester
-     */
-    public function setExpertPartTwoScreenshotPath($expertPartTwoScreenshotPath)
-    {
-        $this->expertPartTwoScreenshotPath = $expertPartTwoScreenshotPath;
-
-        return $this;
-    }
-
-    /**
-     * Get expertPartTwoScreenshotPath
-     *
-     * @return string
-     */
-    public function getExpertPartTwoScreenshotPath()
-    {
-        return $this->expertPartTwoScreenshotPath;
-    }
-
-    /**
-     * Set videoTests
-     *
-     * @param \remiii\AWSDownloadCheckBundle\Entity\VideoTest $videoTests
-     * @return Tester
-     */
-    public function setVideoTests(\remiii\AWSDownloadCheckBundle\Entity\VideoTest $videoTests = null)
-    {
-        $this->videoTests = $videoTests;
-
-        return $this;
-    }
-
-    /**
-     * Get videoTests
-     *
-     * @return \remiii\AWSDownloadCheckBundle\Entity\VideoTest
-     */
-    public function getVideoTests()
-    {
-        return $this->videoTests;
     }
 
     /**
@@ -834,11 +778,34 @@ class Tester
     /**
      * Get expertPartOneNextScreenshotPath
      *
-     * @return string
+     * @return string 
      */
     public function getExpertPartOneNextScreenshotPath()
     {
         return $this->expertPartOneNextScreenshotPath;
+    }
+
+    /**
+     * Set expertPartTwoScreenshotPath
+     *
+     * @param string $expertPartTwoScreenshotPath
+     * @return Tester
+     */
+    public function setExpertPartTwoScreenshotPath($expertPartTwoScreenshotPath)
+    {
+        $this->expertPartTwoScreenshotPath = $expertPartTwoScreenshotPath;
+
+        return $this;
+    }
+
+    /**
+     * Get expertPartTwoScreenshotPath
+     *
+     * @return string 
+     */
+    public function getExpertPartTwoScreenshotPath()
+    {
+        return $this->expertPartTwoScreenshotPath;
     }
 
     /**
@@ -857,10 +824,33 @@ class Tester
     /**
      * Get expertPartTwoNextScreenshotPath
      *
-     * @return string
+     * @return string 
      */
     public function getExpertPartTwoNextScreenshotPath()
     {
         return $this->expertPartTwoNextScreenshotPath;
+    }
+
+    /**
+     * Set videoTests
+     *
+     * @param \remiii\AWSDownloadCheckBundle\Entity\VideoTest $videoTests
+     * @return Tester
+     */
+    public function setVideoTests(\remiii\AWSDownloadCheckBundle\Entity\VideoTest $videoTests = null)
+    {
+        $this->videoTests = $videoTests;
+
+        return $this;
+    }
+
+    /**
+     * Get videoTests
+     *
+     * @return \remiii\AWSDownloadCheckBundle\Entity\VideoTest 
+     */
+    public function getVideoTests()
+    {
+        return $this->videoTests;
     }
 }
