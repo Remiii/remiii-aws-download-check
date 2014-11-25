@@ -52,29 +52,43 @@
                     {{ form_widget(form.cloudfrontScreenshot) }}
                 </div>
                 <div class="well">
-                <h3>$_ Expert part</h3>
-                <p>{{ 'text_expert_part_explanation'|trans }}</p>
-                <pre>$ dig s3.amazonaws.com
+                    <h3>$_ Expert part</h3>
+                    <p>{{ 'text_expert_part_explanation'|trans }}</p>
+                    <pre>$ date
+$ dig s3.amazonaws.com
 $ dig video.i-players.com
 $ traceroute video.i-players.com
-$ wget --server-response http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>
-                <div class="form-group">
-                    {{ form_label(form.expertPartOneScreenshot, 'form_expert_part_one_screenshot'|trans|capitalize ) }}
-                    {{ form_errors(form.expertPartOneScreenshot) }}
-                    {{ form_widget(form.expertPartOneScreenshot) }}
-                </div>
-                <p>{{ 'text_expert_part_explanation'|trans }}</p>
-                <pre>$ dig d7uri8nf7uskq.cloudfront.net
+$ wget --server-response http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
+$ for count in {1..5}; do dig +noall +answer video.i-players.com | tail -1; echo -n `date`" -- ";curl -w 'bytesPerSecondDownload %{speed_download}\n' -so /dev/null http://video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4; done</pre>
+                    <div class="form-group">
+                        {{ form_label(form.expertPartOneScreenshot, 'form_expert_part_one_screenshot'|trans|capitalize ) }}
+                        {{ form_errors(form.expertPartOneScreenshot) }}
+                        {{ form_widget(form.expertPartOneScreenshot) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.expertPartOneNextScreenshot, 'form_expert_part_one_screenshot'|trans|capitalize ) }}
+                        {{ form_errors(form.expertPartOneNextScreenshot) }}
+                        {{ form_widget(form.expertPartOneNextScreenshot) }}
+                    </div>
+                    <p>{{ 'text_expert_part_explanation'|trans }}</p>
+                    <pre>$ date
+$ dig d7uri8nf7uskq.cloudfront.net
 $ dig resolver-identity.cloudfront.net
 $ dig video.i-players.com
 $ traceroute d7uri8nf7uskq.cloudfront.net
 $ traceroute cdn.video.i-players.com
-$ wget --server-response http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4</pre>
-                <div class="form-group">
-                    {{ form_label(form.expertPartTwoScreenshot, 'form_expert_part_two_screenshot'|trans|capitalize ) }}
-                    {{ form_errors(form.expertPartTwoScreenshot) }}
-                    {{ form_widget(form.expertPartTwoScreenshot) }}
-                </div>
+$ wget --server-response http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4
+$ for count in {1..5}; do dig +noall +answer cdn.video.i-players.com | tail -1; echo -n `date`" -- ";curl -w 'bytesPerSecondDownload %{speed_download}\n' -so /dev/null http://cdn.video.i-players.com/a4f092966a23e7edea120de3e3e0ab7c94bd2176.mp4; done</pre>
+                    <div class="form-group">
+                        {{ form_label(form.expertPartTwoScreenshot, 'form_expert_part_two_screenshot'|trans|capitalize ) }}
+                        {{ form_errors(form.expertPartTwoScreenshot) }}
+                        {{ form_widget(form.expertPartTwoScreenshot) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.expertPartTwoNextScreenshot, 'form_expert_part_two_screenshot'|trans|capitalize ) }}
+                        {{ form_errors(form.expertPartTwoNextScreenshot) }}
+                        {{ form_widget(form.expertPartTwoNextScreenshot) }}
+                    </div>
                 </div>
                 <p>{{ 'text_finish_part'|trans }}</p>
                 {{ form_row(form.save, { 'label': 'save'|trans|capitalize }) }}

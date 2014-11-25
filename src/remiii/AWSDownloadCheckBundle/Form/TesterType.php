@@ -43,7 +43,15 @@ class TesterType extends AbstractType
                 'data_class' => null,
                 'required' => false
             ))
+            ->add('expertPartOneNextScreenshot', 'file', array(
+                'data_class' => null,
+                'required' => false
+            ))
             ->add('expertPartTwoScreenshot', 'file', array(
+                'data_class' => null,
+                'required' => false
+            ))
+            ->add('expertPartTwoNextScreenshot', 'file', array(
                 'data_class' => null,
                 'required' => false
             ))
