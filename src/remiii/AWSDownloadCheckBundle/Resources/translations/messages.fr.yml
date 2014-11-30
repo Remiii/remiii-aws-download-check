@@ -13,5 +13,6 @@ form_expert_part_one_screenshot: Copie écran
 form_expert_part_two_screenshot: Copie écran
 text_3part_test_explanation_part1: effectuer un test sur le site
 text_3part_test_explanation_part2: cliquer sur "test" puis effectuer une caputre-écran et télécharger là
+text_3part_test_warning: attention l'affichage de la page peut-être extrêmement long (3 à 5 minutes) !
 text_expert_part_explanation: Partie résevée aux experts ! Si vous ne comprenez pas les comamndes ci-dessous, veuillez ignorer cette partie.
 text_finish_part: Vous n'avez plus qu'à valider le formulaire et c'est fini.

@@ -17,7 +17,7 @@ class TesterType extends AbstractType
             ->add('lastname')
             ->add('email')
             ->add('isp', 'choice', array(
-                'choices' => array('orange' => 'Orange', 'free' => 'Free', 'numericable' => 'Numericable', 'sfr' => 'SFR', 'bouygues' => 'Bouygues', 'darty' => 'Darty', 'atnt' => 'AT&T', 'other' => 'Autre'),
+                'choices' => array('orange' => 'Orange', 'free' => 'Free', 'numericable' => 'Numericable', 'sfr' => 'SFR', 'bouygues' => 'Bouygues', 'darty' => 'Darty', 'atnt' => 'AT&T', 'ovh' => 'OVH', 'other' => 'Autre'),
                 'expanded' => true,
                 'widget_type' => 'inline'
             ))
